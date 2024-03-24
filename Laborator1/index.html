@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>First page</title>
+    <link href="./favicon.ico" rel="icon" type="image/x-icon" />
+    <!--here the CSS code starts-->
+    <style>
+      h2 {
+        font-size: 24pt;
+        font-family: sans-serif;
+      }
+      button,
+      input {
+        color: blue;
+        background-color: yellow;
+        font-size: 10pt;
+      }
+      :placeholder-shown {
+        border-radius: 10px;
+        background: yellow;
+        padding: 10px;
+        width: 180px;
+        height: 10px;
+      }
+
+      .valid{
+        border-radius: 10px;
+        background: lightgreen ;
+        border-color: green;
+        padding: 10px;
+        width: 180px;
+        height: 10px;
+      }
+
+      .invalid{
+        border-radius: 10px;
+        background: pink ;
+        border-color: red;
+        padding: 10px;
+        width: 180px;
+        height: 10px;
+      }
+
+      #status-message {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 12pt;
+      }
+      .success {
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+    <!--here the CSS code ends-->
+    
+  </head>
+  <>
+    <h2>First Web App</h2>
+    <input type="text" placeholder="Enter your student's name" id="name"> 
+    <button onclick="validate()">Click me</button><br>
+    <input type="number" placeholder="Enter your student's grade " id="grade">
+    </input>
+    <button onclick="rst()">Reset</button><br>
+
+    <!-- Status Message section -->
+    <textarea id="validationMessages" placeholder="Validation Messages" readonly></textarea>
+     
+    <!--here the JS code starts-->
+    <script>
+      function d(id){
+        return document.getElementById(id);
+      }
+
+      function addMessage(message) {
+        d("validationMessages").value += message + "\n";
+      }
+      
+      function setStatusMessage(message, type) {
+        const statusMessage = d("status-message");
+        statusMessage.textContent = message;
+        statusMessage.className = type;
+      }
+
+
+      function validate() {
+        let name = d("name").value;
+        let grade = d("grade").value;
+        if (name.length < 3 || name.length > 50 && grade < 0 || grade > 10) {
+          //console.log("Wrong length for name and grade.");
+          //setStatusMessage("Wrong length for name and grade.", "error");
+          addMessage("Invalid input.", "error");
+          
+          
+          invalidare
+        } else{
+          //console.log("Correct length for name and grade.");  
+          //setStatusMessage("Correct length for name and grade.", "success");
+          addMessage("Valid input.", "success");
+        }
+        
+      }
+      function rst() {
+        d("name").value = "";
+        d("grade").value = "";
+        setStatusMessage("", "");
+      }
+      
+    </script>
+    <!--here the JS code ends-->
+  </body>
+</html>
