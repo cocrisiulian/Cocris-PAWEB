@@ -1,0 +1,133 @@
+:root {
+  --dark-blue: #0b5ed7;
+  --light-blue: #9dbeef;
+  --blue: #226dda;
+  --red: #df4759;
+}
+
+button#action-update {
+  width: 200px;
+  margin: 0;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--dark-blue);
+  border-radius: 0.4rem;
+  line-height: 1.6;
+  background-color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--dark-blue);
+  cursor: pointer;
+  user-select: none;
+  outline: 0;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+button#action-update span:first-child {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+button#action-update span:last-child {
+  margin: auto;
+}
+
+button#action-update:disabled {
+  cursor: default;
+  color: var(--light-blue);
+}
+
+button#action-update:enabled:hover {
+  color: white;
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+button#action-update:enabled:active {
+  box-shadow: 0 0 0 0.25rem var(--light-blue);
+}
+
+/* Task 2: Custom Radio Group */
+fieldset#hero-level {
+  border: 1px solid var(--gray-3);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  appearance: none;
+  outline: 0;
+  height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.15s;
+}
+
+fieldset#hero-level:focus-within {
+  box-shadow: 0 0 0 0.25rem var(--light-blue);
+}
+
+fieldset#hero-level abbr {
+  padding-left: 0.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--red);
+}
+
+input[type="radio"] {
+  height: 1.1rem;
+  width: 1.1rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+fieldset#hero-level:not(:focus-within) {
+  box-shadow: 0 0 0 0.05rem var(--light-blue);
+}
+
+/* Task 3: Layouts */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1;
+  height: 100px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.a {
+  background-color: #ffcc00; /* Adjust color as needed */
+}
+
+.b1,
+.b2 {
+  background-color: #66ff66; /* Adjust color as needed */
+  flex-basis: 50%;
+}
+
+.b1 {
+  order: 1;
+}
+
+.b2 {
+  order: 3;
+}
+
+@media (max-width: 600px) {
+  .b1,
+  .b2 {
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .a {
+    flex-basis: 100%;
+  }
+}
