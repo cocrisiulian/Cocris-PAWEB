@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./assets/js/repository.js"></script>
+    <script src="./assets/js/model.js"></script>
+    <script>
+      // create the repository
+      let repository = new Repository();
+      // create the model
+      let model = new Model(repository);
+
+      console.log(`Heroes, initially:`);
+      displayAllHeroes();
+
+      // add a new hero in the repository
+      try {
+        model.createHero({name: `Frank`, level: `senior`});
+      } catch (error) {
+        console.log(`Error on creating hero. ${error.message}`);
+      }
+      console.log(`Heroes, after creation of Frank:`);
+      displayAllHeroes();
+
+      // remove a hero
+      model.deleteHero(`Frank`);
+      console.log(`Heroes, after deletion of Frank:`);
+      displayAllHeroes();
+
+      // model.updateHero("Dave", {name: `Dave`, level: ``});
+      // console.log(`Heroes, after rename of Bob:`);
+      // displayAllHeroes();
+
+      model.updateHero("Dave", {name: `Steve`, level: `middle`});
+      console.log(`Heroes, after rename of Dave:`);
+      displayAllHeroes();
+
+      model.updateHero("Steve", {name: `Bob`, level: `middle`});
+      console.log(`Heroes, after rename of Bob:`);
+      displayAllHeroes();
+
+      function displayAllHeroes() {
+        let heroes = model.readHeroes();
+        for (const hero of heroes) {
+          console.log(hero);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Hello
+  </body>
+</html>
