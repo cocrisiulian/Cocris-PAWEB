@@ -1,0 +1,36 @@
+li.unselected {
+  color: black;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: normal;
+}
+li.selected {
+  color: red;
+  background-color: yellow;
+  font-size: 2rem;
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+tr.unselected,
+td.unselected {
+  color: black;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: normal;
+}
+tr.selected,
+td.selected {
+  color: red;
+  background-color: yellow;
+  font-size: 2rem;
+  font-weight: bold;
+}
+tr,
+td {
+  border: 1px solid;
+  border-color: solid black 1px;
+  padding: 10px;
+}
