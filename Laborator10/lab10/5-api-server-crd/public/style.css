@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: white;
+}
+
+input,
+button {
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid #444;
+  color: white;
+  background-color: #333;
+  margin: 8px 0;
+}
+
+input {
+  margin-right: 16px;
+}
+
+button {
+  margin: 8px 0 24px;
+  display: block;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+button:active {
+  background-color: #666;
+}
+
+tr.selected {
+  color: red;
+}
+
+table,
+th,
+td {
+  border: 1px solid #555;
+  border-collapse: collapse;
+  padding: 8px;
+  margin: 8px 0;
+}
